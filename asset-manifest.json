@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/serbian-schools/static/css/main.26063631.css",
+    "main.js": "/serbian-schools/static/js/main.987ff53b.js",
+    "index.html": "/serbian-schools/index.html",
+    "main.26063631.css.map": "/serbian-schools/static/css/main.26063631.css.map",
+    "main.987ff53b.js.map": "/serbian-schools/static/js/main.987ff53b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.26063631.css",
+    "static/js/main.987ff53b.js"
+  ]
+}
