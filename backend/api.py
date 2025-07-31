@@ -158,6 +158,8 @@ class SchoolDataAPI:
             max_points = request.args.get("max_points", type=float)
             limit = request.args.get("limit", 50, type=int)
             offset = request.args.get("offset", 0, type=int)
+            sort_by = request.args.get("sort_by", "total_points")
+            sort_order = request.args.get("sort_order", "desc")
 
             # Filter data
             filtered_df = self.df.copy()
@@ -186,8 +188,13 @@ class SchoolDataAPI:
             if max_points:
                 filtered_df = filtered_df[filtered_df["total_points"] <= max_points]
 
-            # Sort by total points (descending)
-            filtered_df = filtered_df.sort_values("total_points", ascending=False)
+            # Sort data
+            ascending = sort_order.lower() == 'asc'
+            if sort_by in filtered_df.columns:
+                filtered_df = filtered_df.sort_values(sort_by, ascending=ascending)
+            else:
+                # Default sort by total points descending
+                filtered_df = filtered_df.sort_values("total_points", ascending=False)
 
             # Pagination
             total_count = len(filtered_df)

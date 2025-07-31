@@ -66,11 +66,11 @@ const SchoolDetail = () => {
   };
 
   const getPercentileDescription = (percentile) => {
-    if (percentile >= 90) return 'Exceptional performance';
-    if (percentile >= 75) return 'Above average performance';
-    if (percentile >= 50) return 'Average performance';
-    if (percentile >= 25) return 'Below average performance';
-    return 'Needs improvement';
+    if (percentile >= 90) return 'Изузетне перформансе';
+    if (percentile >= 75) return 'Изнад просека';
+    if (percentile >= 50) return 'Просечне перформансе';
+    if (percentile >= 25) return 'Испод просека';
+    return 'Потребно побољшање';
   };
 
   if (loading) {
@@ -90,7 +90,7 @@ const SchoolDetail = () => {
           startIcon={<ArrowBack />}
           sx={{ mb: 2 }}
         >
-          Back to Schools
+          Назад на школе
         </Button>
         <Alert severity="error">{error}</Alert>
       </Box>
@@ -106,9 +106,9 @@ const SchoolDetail = () => {
           startIcon={<ArrowBack />}
           sx={{ mb: 2 }}
         >
-          Back to Schools
+          Назад на школе
         </Button>
-        <Alert severity="info">No school data available.</Alert>
+        <Alert severity="info">Нема података о школи.</Alert>
       </Box>
     );
   }
@@ -122,7 +122,7 @@ const SchoolDetail = () => {
         startIcon={<ArrowBack />}
         sx={{ mb: 3 }}
       >
-        Back to Schools
+        Назад на школе
       </Button>
 
       {/* School Header */}
@@ -137,12 +137,12 @@ const SchoolDetail = () => {
               {school.municipality}, {school.district}
             </Typography>
             <Typography variant="body1" sx={{ mb: 2 }}>
-              School ID: {school.id}
+              ИД школе: {school.id}
             </Typography>
           </Grid>
           <Grid item xs={12} md={4} textAlign="center">
             <Chip
-              label={`${school.total_points} points`}
+              label={`${school.total_points} поена`}
               color={getPerformanceColor(school.total_points)}
               sx={{ fontSize: '1.2rem', p: 2, mb: 1 }}
             />
@@ -163,14 +163,14 @@ const SchoolDetail = () => {
             <CardContent>
               <Typography variant="h6" gutterBottom>
                 <TrendingUp sx={{ mr: 1, verticalAlign: 'middle' }} />
-                Performance Overview
+                Преглед перформанси
               </Typography>
               <Divider sx={{ mb: 2 }} />
               
               <Grid container spacing={2}>
                 <Grid item xs={6}>
                   <Typography variant="subtitle2" color="textSecondary">
-                    Total Points
+                    Укупни поени
                   </Typography>
                   <Typography variant="h5" color="primary">
                     {school.total_points}
@@ -178,7 +178,7 @@ const SchoolDetail = () => {
                 </Grid>
                 <Grid item xs={6}>
                   <Typography variant="subtitle2" color="textSecondary">
-                    Percentile Rank
+                    Перцентилни ранг
                   </Typography>
                   <Typography variant="h5" color="secondary">
                     {school.percentile}%
@@ -186,7 +186,7 @@ const SchoolDetail = () => {
                 </Grid>
                 <Grid item xs={6}>
                   <Typography variant="subtitle2" color="textSecondary">
-                    Test Points Average
+                    Просек тест поена
                   </Typography>
                   <Typography variant="h6">
                     {school.test_points_avg || 'N/A'}
@@ -194,7 +194,7 @@ const SchoolDetail = () => {
                 </Grid>
                 <Grid item xs={6}>
                   <Typography variant="subtitle2" color="textSecondary">
-                    Vukova Percentage
+                    Вукова проценат
                   </Typography>
                   <Typography variant="h6" color="success.main">
                     {school.vukova_percentage}%
@@ -211,14 +211,14 @@ const SchoolDetail = () => {
             <CardContent>
               <Typography variant="h6" gutterBottom>
                 <People sx={{ mr: 1, verticalAlign: 'middle' }} />
-                Student Statistics
+                Статистике ученика
               </Typography>
               <Divider sx={{ mb: 2 }} />
               
               <Grid container spacing={2}>
                 <Grid item xs={6}>
                   <Typography variant="subtitle2" color="textSecondary">
-                    8th Grade Students
+                    Ученици 8. разреда
                   </Typography>
                   <Typography variant="h5" color="primary">
                     {school.students_count}
@@ -226,7 +226,7 @@ const SchoolDetail = () => {
                 </Grid>
                 <Grid item xs={6}>
                   <Typography variant="subtitle2" color="textSecondary">
-                    Finished Students
+                    Завршени ученици
                   </Typography>
                   <Typography variant="h5">
                     {school.finished_students}
@@ -234,7 +234,7 @@ const SchoolDetail = () => {
                 </Grid>
                 <Grid item xs={12}>
                   <Typography variant="subtitle2" color="textSecondary">
-                    Students with Vukova Diploma
+                    Ученици са Вуковом дипломом
                   </Typography>
                   <Box display="flex" alignItems="center" gap={1}>
                     <Typography variant="h5" color="success.main">
@@ -254,32 +254,32 @@ const SchoolDetail = () => {
             <CardContent>
               <Typography variant="h6" gutterBottom>
                 <Grade sx={{ mr: 1, verticalAlign: 'middle' }} />
-                Grade Averages
+                Просеци оцена
               </Typography>
               <Divider sx={{ mb: 2 }} />
               
               <List dense>
                 <ListItem>
                   <ListItemText
-                    primary="6th Grade Average"
+                    primary="Просек 6. разреда"
                     secondary={school.grades.grade_6 || 'N/A'}
                   />
                 </ListItem>
                 <ListItem>
                   <ListItemText
-                    primary="7th Grade Average"
+                    primary="Просек 7. разреда"
                     secondary={school.grades.grade_7 || 'N/A'}
                   />
                 </ListItem>
                 <ListItem>
                   <ListItemText
-                    primary="8th Grade Average"
+                    primary="Просек 8. разреда"
                     secondary={school.grades.grade_8 || 'N/A'}
                   />
                 </ListItem>
                 <ListItem>
                   <ListItemText
-                    primary="Total Average Grade"
+                    primary="Укупни просек оцена"
                     secondary={school.grades.total_avg || 'N/A'}
                   />
                 </ListItem>
@@ -293,7 +293,7 @@ const SchoolDetail = () => {
           <Card>
             <CardContent>
               <Typography variant="h6" gutterBottom>
-                Contact Information
+                Контакт информације
               </Typography>
               <Divider sx={{ mb: 2 }} />
               
@@ -304,7 +304,7 @@ const SchoolDetail = () => {
                       <LocationOn color="primary" />
                     </ListItemIcon>
                     <ListItemText
-                      primary="Address"
+                      primary="Адреса"
                       secondary={school.contact.address}
                     />
                   </ListItem>
@@ -316,7 +316,7 @@ const SchoolDetail = () => {
                       <Email color="primary" />
                     </ListItemIcon>
                     <ListItemText
-                      primary="Email"
+                      primary="И-мејл"
                       secondary={
                         <a href={`mailto:${school.contact.email}`}>
                           {school.contact.email}
@@ -332,7 +332,7 @@ const SchoolDetail = () => {
                       <Language color="primary" />
                     </ListItemIcon>
                     <ListItemText
-                      primary="Website"
+                      primary="Веб сајт"
                       secondary={
                         <a 
                           href={school.contact.website} 
