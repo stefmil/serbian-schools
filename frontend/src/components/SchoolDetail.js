@@ -28,7 +28,7 @@ import {
   People,
   ArrowBack
 } from '@mui/icons-material';
-import { fetchSchoolDetail } from '../services/api';
+import { fetchSchoolDetail } from '../services/unifiedApi';
 
 const SchoolDetail = () => {
   const { id } = useParams();

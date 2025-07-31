@@ -16,7 +16,7 @@ import {
   fetchDistrictComparison,
   fetchOverviewStats,
   fetchTopSchools,
-} from '../services/api';
+} from '../services/unifiedApi';
 
 const HomePage = () => {
   const navigate = useNavigate();

@@ -23,7 +23,7 @@ import {
   Alert
 } from '@mui/material';
 import { Link } from 'react-router-dom';
-import { fetchSchools, fetchDistricts } from '../services/api';
+import { fetchSchools, fetchDistricts } from '../services/unifiedApi';
 
 const SchoolsList = () => {
   const [schools, setSchools] = useState([]);

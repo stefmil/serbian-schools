@@ -30,7 +30,7 @@ import {
   Pie,
   Cell
 } from 'recharts';
-import { fetchDistricts, fetchSchools } from '../services/api';
+import { fetchDistricts, fetchSchools } from '../services/unifiedApi';
 
 // Modern vibrant colors matching our theme
 const COLORS = ['#6366F1', '#EC4899', '#10B981', '#F59E0B', '#06B6D4', '#EF4444', '#8B5CF6', '#F472B6'];
